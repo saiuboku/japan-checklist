@@ -1,0 +1,1072 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:,">
+<title>刚来日本第一年清单 · 新人手续一次搞定</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+--bg:#f4f6f5; --card:#ffffff; --card2:#eef3f1; --ink:#172622; --muted:#5c6f6a; --line:#dce5e1;
+--teal:#0e7c6b; --teal-dark:#0a5f53; --teal-soft:#e0f2ec; --coral:#d9482f; --coral-soft:#fdebe7;
+--amber:#9a6b00; --amber-soft:#fdf3d7; --radius:16px;
+color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+:root{ --bg:#111715; --card:#1a2220; --card2:#212b28; --ink:#e8efec; --muted:#9db0aa; --line:#2c3a36;
+--teal:#2fbf9f; --teal-dark:#2fbf9f; --teal-soft:#17352e; --coral:#ff7a5c; --coral-soft:#3a211b;
+--amber:#e8b84b; --amber-soft:#332a12; color-scheme:dark;}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans SC",-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+body.lang-tw{font-family:"Noto Sans TC","Noto Sans SC",-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif}
+a{color:var(--teal)}
+.wrap{max-width:760px;margin:0 auto;padding:0 16px 48px}
+
+/* Language switch */
+.lang-bar{display:flex;justify-content:flex-end;padding-top:16px}
+.lang-switch{display:inline-flex;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:3px;gap:2px;box-shadow:0 2px 10px rgba(10,60,50,.05)}
+.lang-switch button{border:0;background:transparent;color:var(--muted);font-family:inherit;font-size:13.5px;font-weight:700;padding:7px 18px;border-radius:999px;cursor:pointer;min-height:38px;line-height:1.2}
+.lang-switch button.active{background:var(--teal);color:#fff}
+.lang-switch button:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+
+/* Hero */
+.hero{padding:14px 0 8px}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;background:var(--teal-soft);color:var(--teal-dark);font-size:13px;font-weight:700;padding:6px 12px;border-radius:999px}
+.hero h1{font-size:32px;line-height:1.25;margin:14px 0 8px;font-weight:900;letter-spacing:.01em}
+.hero h1 em{font-style:normal;color:var(--teal)}
+.hero p{margin:0;color:var(--muted);font-size:15px}
+.hero-points{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.hero-points span{font-size:12.5px;background:var(--card);border:1px solid var(--line);padding:7px 10px;border-radius:999px;color:var(--muted)}
+
+/* Form */
+.form-card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px;margin-top:20px;box-shadow:0 8px 30px rgba(10,60,50,.06)}
+.form-card h2{margin:0 0 4px;font-size:18px}
+.form-card .sub{margin:0 0 16px;color:var(--muted);font-size:13.5px}
+.field{margin-bottom:14px}
+.field label{display:block;font-size:13px;font-weight:700;margin-bottom:6px}
+.field label .opt{font-weight:400;color:var(--muted)}
+.field input[type="date"],.field select{width:100%;min-height:48px;padding:10px 12px;border:1.5px solid var(--line);border-radius:12px;background:var(--card);color:var(--ink);font-size:16px;font-family:inherit}
+.field input[type="date"]:focus,.field select:focus{outline:none;border-color:var(--teal)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:520px){.grid2{grid-template-columns:1fr}}
+.check-line{display:flex;gap:10px;align-items:flex-start;padding:12px;border:1px solid var(--line);border-radius:12px;margin-bottom:10px;cursor:pointer;min-height:48px}
+.check-line input{width:20px;height:20px;margin-top:2px;accent-color:var(--teal);flex:none}
+.check-line span{font-size:14px}
+.check-line small{display:block;color:var(--muted);font-size:12.5px}
+.privacy{font-size:12.5px;color:var(--muted);background:var(--card2);border-radius:10px;padding:10px 12px;margin-top:6px}
+
+/* Progress */
+.progress-sticky{position:sticky;top:0;z-index:20;background:var(--bg);padding:14px 0 10px;margin-top:22px}
+.progress-head{display:flex;justify-content:space-between;align-items:baseline}
+.progress-head h2{margin:0;font-size:18px}
+.progress-num{font-weight:900;color:var(--teal);font-size:18px}
+.progress-bar{height:10px;background:var(--card2);border:1px solid var(--line);border-radius:999px;overflow:hidden;margin-top:8px}
+.progress-fill{height:100%;background:var(--teal);border-radius:999px;transition:width.35s ease;width:0%}
+.progress-msg{font-size:13px;color:var(--muted);margin-top:6px}
+.expiry-alert{display:none;margin-top:12px;background:var(--coral-soft);border:1px solid var(--coral);color:var(--ink);border-radius:12px;padding:12px 14px;font-size:14px}
+.expiry-alert.show{display:block}
+.expiry-alert strong{color:var(--coral)}
+
+/* Timeline */
+.section{margin-top:26px}
+.section-head{display:flex;gap:12px;align-items:flex-start}
+.dot{flex:none;width:38px;height:38px;border-radius:12px;background:var(--teal);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:15px}
+.section-head h3{margin:2px 0 2px;font-size:19px}
+.section-head .when{font-size:13px;color:var(--muted)}
+.section-head .when b{color:var(--coral);font-weight:700}
+.section-count{margin-left:auto;font-size:12.5px;color:var(--muted);white-space:nowrap;padding-top:6px}
+.items{margin:14px 0 0 19px;border-left:2px solid var(--line);padding-left:20px;display:flex;flex-direction:column;gap:10px}
+.item{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 14px 12px;transition:opacity.2s}
+.item.done{opacity:.62}
+.item.done .item-title{text-decoration:line-through}
+.item-top{display:flex;gap:10px;align-items:flex-start;cursor:pointer;min-height:36px}
+.item-top input{width:22px;height:22px;flex:none;margin-top:2px;accent-color:var(--teal);cursor:pointer}
+.item-title{font-weight:700;font-size:15.5px;line-height:1.45}
+.badge{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;vertical-align:2px;margin-left:6px}
+.badge-law{background:var(--coral-soft);color:var(--coral)}
+.badge-you{background:var(--teal-soft);color:var(--teal-dark)}
+.badge-info{background:var(--amber-soft);color:var(--amber)}
+.item-desc{font-size:14px;color:var(--ink);margin:8px 0 0 32px}
+.item-meta{margin:8px 0 2px 32px;display:flex;flex-direction:column;gap:4px}
+.item-meta div{font-size:13px;color:var(--muted);display:flex;gap:6px}
+.item-meta b{color:var(--ink);font-weight:700;flex:none}
+.item-note{margin:8px 0 0 32px;font-size:12.5px;color:var(--amber);background:var(--amber-soft);border-radius:8px;padding:8px 10px}
+@media(prefers-color-scheme:dark){.item-note{color:var(--amber)}}
+.hidden-item{display:none}
+.year-end-note{margin:12px 0 0 50px;background:var(--coral-soft);border:1px solid var(--coral);border-radius:12px;padding:10px 12px;font-size:13.5px}
+@media(max-width:520px){.year-end-note{margin-left:0}}
+
+/* Actions */
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+.btn{flex:1;min-width:150px;min-height:48px;border-radius:12px;border:1.5px solid var(--teal);background:var(--teal);color:#fff;font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;padding:12px}
+.btn.ghost{background:transparent;color:var(--teal)}
+.btn:active{transform:scale(.98)}
+.toast{display:none;margin-top:12px;background:var(--teal-soft);color:var(--teal-dark);border-radius:10px;padding:10px 12px;font-size:13.5px;text-align:center}
+.toast.show{display:block}
+
+/* Footer */
+footer{margin-top:36px;border-top:1px solid var(--line);padding-top:18px;font-size:12.5px;color:var(--muted)}
+footer h4{color:var(--ink);font-size:13px;margin:0 0 6px}
+footer p{margin:0 0 10px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="lang-bar">
+<div class="lang-switch" role="group" aria-label="Language / 語言">
+<button type="button" id="langCN" class="active" aria-pressed="true">简体</button>
+<button type="button" id="langTW" aria-pressed="false">繁體</button>
+</div>
+</div>
+
+<header class="hero">
+<span class="hero-tag" id="heroTag">🇯🇵 给刚落地日本的华人新人</span>
+<h1 id="heroTitle">刚来日本第一年，<br>手续<em>一张清单</em>全搞定</h1>
+<p id="heroDesc">住民登记、健康保险、年金、银行、手机、在留更新……按时间顺序排好。填一下你的情况，下面自动生成只属于你的清单，办完一项勾一项。</p>
+<div class="hero-points"><span id="heroPoint1">⏱ 约 1 分钟生成</span><span id="heroPoint2">📱 适合转发收藏</span><span id="heroPoint3">🔒 不用注册 · 信息不上传</span></div>
+</header>
+
+<section class="form-card" id="formCard" aria-label="填写你的情况">
+<h2 id="formTitle">先告诉我你的情况</h2>
+<p class="sub" id="formSub">改任意一项，下面的清单会立刻跟着变。</p>
+
+<div class="grid2">
+<div class="field">
+<label for="arrival" id="arrivalLabel">抵达日本的日期</label>
+<input type="date" id="arrival">
+</div>
+<div class="field">
+<label for="expiry"><span id="expiryLabel">在留卡到期日</span> <span class="opt" id="expiryOpt">（可选，填了帮你算更新时间）</span></label>
+<input type="date" id="expiry">
+</div>
+</div>
+
+<div class="grid2">
+<div class="field">
+<label for="visa" id="visaLabel">在留资格类型</label>
+<select id="visa">
+<option value="work">工作（技术·人文知识·国际业务等）</option>
+<option value="study">留学</option>
+<option value="wh">打工度假（ワーキングホリデー · 特定活动）</option>
+<option value="family">家族滞在</option>
+<option value="specified">特定技能</option>
+<option value="other">其他</option>
+</select>
+</div>
+<div class="field">
+<label for="status" id="statusLabel">你目前是</label>
+<select id="status">
+<option value="employee">公司职员（正社员 / 契约社员）</option>
+<option value="student">学生</option>
+<option value="parttime">打工中（兼职 / アルバイト）</option>
+<option value="house">主妇 · 主夫 / 暂时无业</option>
+</select>
+</div>
+</div>
+
+<label class="check-line">
+<input type="checkbox" id="hasLicense">
+<span><span id="licenseText">我有中国驾照，想换日本驾照</span><small id="licenseSub">勾选后，清单里会出现「外免切替」的说明</small></span>
+</label>
+<label class="check-line">
+<input type="checkbox" id="hasSide">
+<span><span id="sideText">我有打工 / 副业等工资以外的收入</span><small id="sideSub">勾选后，会重点提示确定申告（报税）</small></span>
+</label>
+<label class="check-line" id="whShahoLine" style="display:none">
+<input type="checkbox" id="whHasShaho">
+<span><span id="whShahoText">打工度假：我已有雇主帮我加入社保（健康保险＋厚生年金）</span><small id="whShahoSub">默认不勾：没有雇主社保时，国保和国民年金要自己办，清单会默认列出。只有公司确实已帮你加入时才勾这里。</small></span>
+</label>
+
+<div class="privacy" id="privacyText">🔒 放心：这里填的日期和身份只在你这台手机的浏览器里计算，不会上传、不会保存到任何服务器。关掉页面就没了。</div>
+</section>
+
+<div class="progress-sticky">
+<div class="progress-head"><h2 id="progressTitle">你的第一年清单</h2><span class="progress-num" id="progressNum">0 / 0</span></div>
+<div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+<div class="progress-msg" id="progressMsg">从最上面开始，一项一项来，不着急。</div>
+<div class="expiry-alert" id="expiryAlert"></div>
+</div>
+
+<main id="timeline"></main>
+
+<div class="actions">
+<button class="btn" id="copyBtn" type="button">复制清单发给自己</button>
+<button class="btn ghost" id="resetBtn" type="button">清空勾选，重新开始</button>
+</div>
+<div class="toast" id="toast">已复制！可以粘贴到微信 / 备忘录里慢慢办。</div>
+
+<footer>
+<h4 id="footerTitle">免责声明</h4>
+<p id="footerP1">本工具只提供一般性的信息整理，帮助你了解大致流程，不构成法律、税务或行政方面的专业建议。各项手续的期限、所需材料和费用会因市区町村、个人情况而不同，请以出入国在留管理厅、年金机构、你所在市区町村役所等官方窗口的最新说明为准。涉及税务判断（如副业收入是否需要申报）时，建议咨询税务署或税理士。</p>
+<p id="footerP2">信息依据：住民基本台帐法（搬入后 14 天内申报）、国民健康保险法、国民年金法、出入国管理及难民认定法（在留期间更新可在到期前 3 个月起申请）等公开规定整理。最后整理：2026 年 11 月。</p>
+</footer>
+</div>
+
+<script>
+(function(){
+var $ = function(id){ return document.getElementById(id);};
+var arrivalEl=$('arrival'), expiryEl=$('expiry'), visaEl=$('visa'), statusEl=$('status'),
+licenseEl=$('hasLicense'), sideEl=$('hasSide'), whShahoEl=$('whHasShaho');
+
+var currentLang = 'cn';
+var checked = {}; // in-memory only, preserved across language switch
+
+function toISO(d){ var p=function(n){return (n<10?'0':'')+n;}; return d.getFullYear()+'-'+p(d.getMonth()+1)+'-'+p(d.getDate());}
+if(!arrivalEl.value) arrivalEl.value = toISO(new Date());
+
+function parseDate(v){ if(!v) return null; var p=v.split('-'); return new Date(+p[0], +p[1]-1, +p[2]);}
+function fmt(d){ if(!d) return ''; return d.getFullYear()+'年'+(d.getMonth()+1)+'月'+d.getDate()+'日';}
+function addDays(d,n){ var x=new Date(d.getTime()); x.setDate(x.getDate()+n); return x;}
+function addOneYear(d){ var y=d.getFullYear()+1, m=d.getMonth(), day=d.getDate(); var x=new Date(y, m, day); if(x.getMonth()!==m){ x=new Date(y, m+1, 0); } x.setDate(x.getDate()-1); return x;}
+function daysBetween(a,b){ return Math.round((b-a)/(1000*60*60*24));}
+
+var I18N = {
+cn: {
+  docTitle: '刚来日本第一年清单 · 新人手续一次搞定',
+  heroTag: '🇯🇵 给刚落地日本的华人新人',
+  heroTitle: '刚来日本第一年，<br>手续<em>一张清单</em>全搞定',
+  heroDesc: '住民登记、健康保险、年金、银行、手机、在留更新……按时间顺序排好。填一下你的情况，下面自动生成只属于你的清单，办完一项勾一项。',
+  heroPoints: ['⏱ 约 1 分钟生成','📱 适合转发收藏','🔒 不用注册 · 信息不上传'],
+  formAria: '填写你的情况',
+  formTitle: '先告诉我你的情况',
+  formSub: '改任意一项，下面的清单会立刻跟着变。',
+  arrivalLabel: '抵达日本的日期',
+  expiryLabel: '在留卡到期日',
+  expiryOpt: '（可选，填了帮你算更新时间）',
+  visaLabel: '在留资格类型',
+  visaOpts: ['工作（技术·人文知识·国际业务等）','留学','打工度假（ワーキングホリデー · 特定活动）','家族滞在','特定技能','其他'],
+  statusLabel: '你目前是',
+  statusOpts: ['公司职员（正社员 / 契约社员）','学生','打工中（兼职 / アルバイト）','主妇 · 主夫 / 暂时无业'],
+  licenseText: '我有中国驾照，想换日本驾照',
+  licenseSub: '勾选后，清单里会出现「外免切替」的说明',
+  sideText: '我有打工 / 副业等工资以外的收入',
+  sideSub: '勾选后，会重点提示确定申告（报税）',
+  privacy: '🔒 放心：这里填的日期和身份只在你这台手机的浏览器里计算，不会上传、不会保存到任何服务器。关掉页面就没了。',
+  progressTitle: '你的第一年清单',
+  copyBtn: '复制清单发给自己',
+  resetBtn: '清空勾选，重新开始',
+  toast: '已复制！可以粘贴到微信 / 备忘录里慢慢办。',
+  footerTitle: '免责声明',
+  footerP1: '本工具只提供一般性的信息整理，帮助你了解大致流程，不构成法律、税务或行政方面的专业建议。各项手续的期限、所需材料和费用会因市区町村、个人情况而不同，请以出入国在留管理厅、年金机构、你所在市区町村役所等官方窗口的最新说明为准。涉及税务判断（如副业收入是否需要申报）时，建议咨询税务署或税理士。',
+  footerP2: '信息依据：住民基本台帐法（搬入后 14 天内申报）、国民健康保险法、国民年金法、出入国管理及难民认定法（在留期间更新可在到期前 3 个月起申请）、民法第 140 条及第 143 条（期间计算：1 年到期日为对应日前一日）、行政机关休日法（12 月 29 日至 1 月 3 日为行政机关休日）、外务省打工度假制度说明、入管厅「资格外活动许可」及在留卡记载说明、日本台湾交流协会打工度假 Q&A 等公开规定整理。最后整理：2026 年 11 月。',
+  sections: [
+    {name:'抵达后 14 天内', sub:'先办这几件，其他的都排在它们后面', days:14, num:'14'},
+    {name:'第一个月内', sub:'把生活基础设施搭起来', days:30, num:'30'},
+    {name:'前三个月', sub:'确认工作、税务和长期安排', days:90, num:'90'},
+    {name:'全年持续', sub:'不急，但千万别忘的事', days:null, num:'全年'}
+  ],
+  deadlineLabel: '目标完成日',
+  countSuffix: '已完成',
+  metaWhere: '去哪办',
+  metaBring: '带什么',
+  msgStart: '从最上面开始，一项一项来，不着急。',
+  msgPartial: function(done,left){ return '已完成 ' + done + ' 项，还剩 ' + left + ' 项，节奏很好。'; },
+  msgAll: '🎉 全部办完！第一年的地基打好了，剩下的就是好好生活。',
+  copyArrival: '抵达日期：',
+  copyExpiry: '在留卡到期：',
+  copyNote: '注：本清单为一般信息整理，具体以官方和当地窗口为准。',
+  expiryExpired: function(n){ return '<strong>⚠️ 你的在留卡已经过期 '+n+' 天。</strong>请立刻联系出入国在留管理局或行政书士确认处理办法，不要拖延。'; },
+  expirySoon: function(left,fromTxt){ return '<strong>⏰ 在留卡还有 '+left+' 天到期，现在就可以申请更新了</strong>（可申请期间从 '+fromTxt+' 开始）。先去入管官网对照你的在留资格查材料清单。'; },
+  expiryFuture: function(expTxt,left,fromTxt){ return '📅 在留卡到期日：<strong>'+expTxt+'</strong>，还有 '+left+' 天。从 '+fromTxt+' 起可以申请更新，提前设好日历提醒就行。'; },
+  whExpiryExpired: function(n){ return '<strong>⚠️ 你的在留卡已经过期 '+n+' 天。</strong>打工度假不能补办更新延长，请立刻联系出入国在留管理局确认处理办法，不要拖延。'; },
+  whExpirySoon: function(left){ return '<strong>⏰ 在留卡还有 '+left+' 天到期。</strong>注意：打工度假期满不能靠更新延长（台湾一次给 1 年）。请提前安排在到期前离境；想变更为其他在留资格的，部分国家/地区的安排以期满回国为前提，能否变更并无保证，请提前向入管确认。'; },
+  whExpiryFuture: function(expTxt,left){ return '📅 在留卡到期日：<strong>'+expTxt+'</strong>，还有 '+left+' 天。打工度假最长 1 年、期满不能靠更新延长，提前把离境安排排进日历；如打算变更资格，先向入管确认可行性。'; },
+  whShahoText: '打工度假：我已有雇主帮我加入社保（健康保险＋厚生年金）',
+  whShahoSub: '默认不勾：没有雇主社保时，国保和国民年金要自己办，清单会默认列出。只有公司确实已帮你加入时才勾这里。',
+  yearEndNote: '⚠️ 年末提醒：你的 14 天目标日落在年末年初期间（12 月 21 日至次年 1 月 3 日）。役所 12 月 29 日到 1 月 3 日休息（《行政机关休日法》），材料不全就没有补办窗口，请提前办完，不要拖到截止日当天。',
+  copyEstExpiry: '在留卡到期（按抵达日推算，请与在留卡核对）：',
+  whEstSoon: function(expTxt,left){ return '<strong>⏰ 推算在留到期日：'+expTxt+'</strong>（按抵达日＋1 年－1 天推算，依民法第 140 条、第 143 条期间计算，请与在留卡核对），还有 '+left+' 天。打工度假期满不能靠更新延长，请提前安排离境；能否变更资格请提前向入管确认。'; },
+  whEstFuture: function(expTxt,left){ return '📅 推算在留到期日：<strong>'+expTxt+'</strong>（按抵达日＋1 年－1 天推算，依民法第 140 条、第 143 条期间计算，请与在留卡核对），还有 '+left+' 天。打工度假最长 1 年、期满不能靠更新延长；少数国家/地区先给 6 个月，以在留卡实际日期为准。'; },
+  whEstExpired: function(expTxt,n){ return '<strong>⚠️ 按抵达日推算，你的在留期限可能已过期 '+n+' 天</strong>（推算到期日 '+expTxt+'，请立刻与在留卡核对）。打工度假不能补办更新延长，请立刻联系出入国在留管理局确认处理办法。'; }
+},
+tw: {
+  docTitle: '剛來日本第一年清單 · 新人手續一次搞定',
+  heroTag: '🇯🇵 給剛落地日本的台灣新人',
+  heroTitle: '剛來日本第一年，<br>手續<em>一張清單</em>全搞定',
+  heroDesc: '住民登記、健康保險、年金、銀行、手機、在留更新……按時間順序排好。填一下你的狀況，下面自動產生只屬於你的清單，辦完一項勾一項。',
+  heroPoints: ['⏱ 約 1 分鐘產生','📱 適合轉發收藏','🔒 不用註冊 · 資訊不上傳'],
+  formAria: '填寫你的狀況',
+  formTitle: '先告訴我你的狀況',
+  formSub: '改任何一項，下面的清單會立刻跟著變。',
+  arrivalLabel: '抵達日本的日期',
+  expiryLabel: '在留卡到期日',
+  expiryOpt: '（選填，填了幫你算更新時間）',
+  visaLabel: '在留資格類型',
+  visaOpts: ['工作（技術・人文知識・國際業務等）','留學','打工度假（ワーキングホリデー・特定活動）','家族滞在','特定技能','其他'],
+  statusLabel: '你目前是',
+  statusOpts: ['公司職員（正社員 / 契約社員）','學生','打工中（兼職 / アルバイト）','主婦・主夫 / 暫時無業'],
+  licenseText: '我有台灣駕照，想換日本駕照',
+  licenseSub: '勾選後，清單裡會出現「外免切替」的說明',
+  sideText: '我有打工 / 副業等薪水以外的收入',
+  sideSub: '勾選後，會重點提示確定申告（報稅）',
+  privacy: '🔒 放心：這裡填的日期和身分只在你這支手機的瀏覽器裡計算，不會上傳、不會保存到任何伺服器。關掉頁面就沒了。',
+  progressTitle: '你的第一年清單',
+  copyBtn: '複製清單傳給自己',
+  resetBtn: '清空勾選，重新開始',
+  toast: '已複製！可以貼到 LINE / 備忘錄裡慢慢辦。',
+  footerTitle: '免責聲明',
+  footerP1: '本工具只提供一般性的資訊整理，幫助你了解大致流程，不構成法律、稅務或行政方面的專業建議。各項手續的期限、所需資料和費用會因市区町村、個人狀況而不同，請以出入國在留管理廳、年金機構、你所在市区町村役所等官方窗口的最新說明為準。涉及稅務判斷（如副業收入是否需要申報）時，建議諮詢稅務署或稅理士。',
+  footerP2: '資訊依據：住民基本台帳法（搬入後 14 天內申報）、國民健康保險法、國民年金法、出入國管理及難民認定法（在留期間更新可在到期前 3 個月起申請）、民法第 140 條及第 143 條（期間計算：1 年到期日為對應日前一日）、行政機關休日法（12 月 29 日至 1 月 3 日為行政機關休日）、外務省打工度假制度說明、入管廳「資格外活動許可」及在留卡記載說明、日本台灣交流協會打工度假 Q&A 等公開規定整理。最後整理：2026 年 11 月。',
+  sections: [
+    {name:'抵達後 14 天內', sub:'先辦這幾件，其他的都排在它們後面', days:14, num:'14'},
+    {name:'第一個月內', sub:'把生活基礎設施搭起來', days:30, num:'30'},
+    {name:'前三個月', sub:'確認工作、稅務和長期安排', days:90, num:'90'},
+    {name:'全年持續', sub:'不急，但千萬別忘的事', days:null, num:'全年'}
+  ],
+  deadlineLabel: '目標完成日',
+  countSuffix: '已完成',
+  metaWhere: '去哪辦',
+  metaBring: '帶什麼',
+  msgStart: '從最上面開始，一項一項來，不用急。',
+  msgPartial: function(done,left){ return '已完成 ' + done + ' 項，還剩 ' + left + ' 項，節奏很好。'; },
+  msgAll: '🎉 全部辦完！第一年的基礎打好了，剩下的就是好好生活。',
+  copyArrival: '抵達日期：',
+  copyExpiry: '在留卡到期：',
+  copyNote: '註：本清單為一般資訊整理，具體以官方和當地窗口為準。',
+  expiryExpired: function(n){ return '<strong>⚠️ 你的在留卡已經過期 '+n+' 天。</strong>請立刻聯絡出入國在留管理局或行政書士確認處理辦法，不要拖延。'; },
+  expirySoon: function(left,fromTxt){ return '<strong>⏰ 在留卡還有 '+left+' 天到期，現在就可以申請更新了</strong>（可申請期間從 '+fromTxt+' 開始）。先去入管官網對照你的在留資格查資料清單。'; },
+  expiryFuture: function(expTxt,left,fromTxt){ return '📅 在留卡到期日：<strong>'+expTxt+'</strong>，還有 '+left+' 天。從 '+fromTxt+' 起可以申請更新，提前設好行事曆提醒就行。'; },
+  whExpiryExpired: function(n){ return '<strong>⚠️ 你的在留卡已經過期 '+n+' 天。</strong>打工度假不能補辦更新延長，請立刻聯絡出入國在留管理局確認處理辦法，不要拖延。'; },
+  whExpirySoon: function(left){ return '<strong>⏰ 在留卡還有 '+left+' 天到期。</strong>注意：台灣打工度假入境時一次給 1 年，期滿不能靠更新延長。請提前安排在到期前離境；想變更為其他在留資格的，台日安排以期滿回台為前提，能否變更並無保證，請提前向入管確認。'; },
+  whExpiryFuture: function(expTxt,left){ return '📅 在留卡到期日：<strong>'+expTxt+'</strong>，還有 '+left+' 天。打工度假最長 1 年、期滿不能靠更新延長，提前把離境安排排進行事曆；如打算變更資格，先向入管確認可行性。'; },
+  whShahoText: '打工度假：我已有雇主幫我加入社保（健康保險＋厚生年金）',
+  whShahoSub: '預設不勾：沒有雇主社保時，國保和國民年金要自己辦，清單會預設列出。只有公司確實已幫你加入時才勾這裡。',
+  yearEndNote: '⚠️ 年末提醒：你的 14 天目標日落在年末年初期間（12 月 21 日至次年 1 月 3 日）。役所 12 月 29 日到 1 月 3 日休息（《行政機關休日法》），材料不全就沒有補辦窗口，請提前辦完，不要拖到截止日當天。',
+  copyEstExpiry: '在留卡到期（按抵達日推算，請與在留卡核對）：',
+  whEstSoon: function(expTxt,left){ return '<strong>⏰ 推算在留到期日：'+expTxt+'</strong>（按抵達日＋1 年－1 天推算，依民法第 140 條、第 143 條期間計算，請與在留卡核對），還有 '+left+' 天。打工度假期滿不能靠更新延長，請提前安排離境；能否變更資格請提前向入管確認。'; },
+  whEstFuture: function(expTxt,left){ return '📅 推算在留到期日：<strong>'+expTxt+'</strong>（按抵達日＋1 年－1 天推算，依民法第 140 條、第 143 條期間計算，請與在留卡核對），還有 '+left+' 天。打工度假最長 1 年、期滿不能靠更新延長；少數國家/地區先給 6 個月，以在留卡實際日期為準。'; },
+  whEstExpired: function(expTxt,n){ return '<strong>⚠️ 按抵達日推算，你的在留期限可能已過期 '+n+' 天</strong>（推算到期日 '+expTxt+'，請立刻與在留卡核對）。打工度假不能補辦更新延長，請立刻聯絡出入國在留管理局確認處理辦法。'; }
+}
+};
+
+function T(){ return I18N[currentLang]; }
+
+function buildWHItems(ctx){
+var tw = currentLang === 'tw';
+var isEmployee = !!ctx.whHasShaho;
+var items = [];
+
+if(!tw){
+/* ===== Working Holiday · Simplified ===== */
+items.push({sec:0, id:'wh-airport', title:'入境当天 · 机场：领在留卡，不用办资格外活动许可', badge:['info','入境第一步'],
+desc:'在机场过的其实是入管的「上陸審査」（入国审查），不是海关。审查通过后护照上贴「上陸許可」印：主要机场（成田、羽田、中部、关西、新千歳、広島、福岡）当场发在留卡；其他机场先盖「在留カード後日交付」，卡在办完住民登记后邮寄到家。留学生常被问「要不要打工」，那是给「留学」等资格当场申请「资格外活动许可」的流程——打工度假不一样：你的「特定活动」本身就包含为补贴旅费而打工的活动（风俗营业除外），不需要另办资格外活动许可。审查时如实说明会打工补贴旅费即可，这本来就是这个签证允许做的事。在留期限当场决定：台湾入境时一次给 1 年，从入境当天起算；其他国家/地区多数也是一次给足，少数先给 6 个月、再在协定上限内更新，一切以在留卡上的到期日为准。',
+where:'入境机场的入国审查柜台',
+bring:'护照（贴有打工度假签证）；其他材料按窗口要求出示',
+note:'当场检查两处：①在留卡正面「就労制限の有無」应写「指定書により指定された就労活動のみ可」；②护照里应订着一张「指定书」——在留卡上只写「特定活动」，具体能做什么全看指定书：上面写明度假活动＋补贴旅费的打工、风俗营业禁止，应聘时雇主也会要求出示它。指定书别撕、别弄丢，换新护照时连旧护照一起收好；万一不见了，尽快联系地方出入国在留管理局咨询。'});
+items.push({sec:0, id:'wh-basics', title:'先确认：你的在留资格是「特定活动（打工度假）」', badge:['info','打工度假专属'],
+desc:'打工度假是日本与对方国家/地区之间的青年交流安排：以度假、体验日本文化和生活为主，打工只是补贴旅费的附随活动。在留资格属于「特定活动」，能做的活动以护照上贴的「指定书」为准。申请时年龄为 18–30 岁。',
+where:'先看自己护照上的「指定书」和在留卡上的到期日',
+bring:'护照（含指定书）、在留卡',
+note:'参加次数按国家/地区不同：多数一生一次；但台湾等部分国家/地区已放宽为一生两次（台湾自 2026 年 2 月 1 日起，外务省说明），以你申请地的日本大使馆等最新说明为准。'});
+items.push({sec:0, id:'resident', title:'去区役所 / 市役所办住民登记（転入届）', badge:['law','法律期限 · 14天内'],
+desc:'和其它签证一样：定好住址后 14 天内办住民登记，这是所有手续的第一步，健康保险、年金、My Number、银行开户都排在它后面。',
+where:'你住址所属的市区町村役所「住民课 / 户籍住民课」窗口',
+bring:'在留卡、护照',
+note:'法律规定搬入后 14 天内必须申报。打工度假常换城市、换住处，每次搬家都要重新办（见最后一条）。'});
+items.push({sec:0, id:'zairyu-address', title:'在留卡背面登记地址', badge:['law','和住民登记一起办'],
+desc:'办転入届时，工作人员会把你的新地址打印在在留卡背面，这张卡才算「带地址的在留卡」，开户、办手机、应聘都要用它。',
+where:'同一个窗口，和住民登记同时完成',
+bring:'在留卡本人',
+note:'办完当场检查一下：背面地址有没有打错字。'});
+items.push({sec:0, id:'mynumber-apply', title:'申请 My Number 卡（个人番号卡）', badge:['you','强烈建议办'],
+desc:'办住民登记后会拿到个人番号通知。打工入职、开户、办手续都会用到 My Number，越早申请越省事，邮寄到手通常要几周。',
+where:'役所窗口当场申请，或用通知书上的二维码在网上申请',
+bring:'在留卡、个人番号通知书（登记后寄到或当场领取，以当地役所为准）',
+note:'申请时要设 2 组密码，当场记好。照片可现场拍或自带证件照。'});
+if(!isEmployee){
+items.push({sec:0, id:'kokuho', title:'加入国民健康保险（没有公司社保时）', badge:['law','14天内'],
+desc:'打工度假期间多数人没有公司社保：只要你在日本有住址、又没加入工作单位的健康保险，就必须自己在役所加入国民健康保险，住民登记后 14 天内办。日本看病自付比例靠它降到 3 成，没保险时全额自费非常贵。',
+where:'役所「保险年金课」窗口，通常和住民登记同一天顺手办完',
+bring:'在留卡、My Number 相关文件',
+note:'之后如果某份工作把你加入了公司社保（健康保险＋厚生年金），记得去役所办国保的退出手续，避免重复缴费。'});
+items.push({sec:0, id:'nenkin', title:'办国民年金手续（20 岁以上）', badge:['law','20岁以上必办'],
+desc:'在日本居住的 20 岁到 59 岁的人原则上都要加入国民年金，打工度假也一样（未满 20 岁的人从 20 岁生日那个月起）。没有公司厚生年金时，先在役所办国民年金。',
+where:'役所「保险年金课」窗口',
+bring:'在留卡、护照、My Number 相关文件',
+note:'注意：打工度假不是留学，不能用「学生納付特例」。但收入低时可以申请一般的保险料「免除」或「納付猶予」，按前年所得等条件审查；刚来日本通常没什么收入，也别自己下结论，去窗口申请、由役所和年金机构判断。千万别不申报地放着欠缴。'});
+} else {
+items.push({sec:0, id:'shaho-note', title:'确认：你的健康保险和年金由公司办', badge:['info','不用自己跑役所办'],
+desc:'如果你的工作单位把你加入了健康保险和厚生年金，就不需要自己再办国民健康保险和国民年金。打工度假能被公司加入社保的情况不多见，入职时务必确认清楚。',
+where:'入职时交给公司人事的材料里确认',
+bring:'My Number、年金手帐或基础年金番号通知（没有的话跟人事说明是首次在日本工作）',
+note:'入职一两周后还没拿到健康保险证，要主动问人事；如果公司其实没给你办，立刻回役所自己办国保和年金。'});
+}
+items.push({sec:1, id:'wh-work', title:'打工前确认：不用办资格外活动许可，但有行业禁区', badge:['law','打工度假专属'],
+desc:'打工度假的「特定活动」本身就包含为补贴旅费而工作的活动，所以打工不需要另外申请「资格外活动许可」，也没有留学生那种每周 28 小时的上限（但劳动法关于工时、休息和加班费的规定照常适用，护照上的指定书也要看清）。',
+where:'应聘时把在留卡和护照指定书给雇主确认；拿不准的工种先向地方出入国在留管理局咨询',
+bring:'在留卡、护照（含指定书）',
+note:'绝对禁区：在风俗营业相关场所工作——酒吧、夜总会、陪侍型餐饮店、柏青哥、麻将馆、游戏中心以及性风俗相关店铺等《风俗营业法》管辖的营业场所，连洗碗、打扫等后台工作也算在内。外务省明确：在这类场所从业（人身交易受害等特殊情况除外）属于退去强制（遣返）事由，雇主也会被追究不法就劳助长罪。找工作先确认店铺类型。'});
+items.push({sec:1, id:'bank', title:'开一个日本银行账户', badge:['you','工资 / 房租都要用'],
+desc:'发工资、交房租水电、绑定手机支付都靠它。刚来可选对新人较友好的银行，如ゆうちょ银行（邮储）或各大银行的新人口座。',
+where:'银行网点或部分银行的 App / 网上申请',
+bring:'已登记地址的在留卡、印章（部分银行可签名代替）、My Number 相关文件、手机号',
+note:'来日不满 6 个月时，账户可能先是「非居住者口座」，部分转账功能受限，满 6 个月后去窗口变更即可。'});
+items.push({sec:1, id:'sim', title:'办手机卡 / 手机号', badge:['you','越早越好'],
+desc:'日本办很多事都要手机号收验证码。先办一张能打电话的卡，流量套餐之后再慢慢换。',
+where:'运营商门店、电器量贩店，或格安 SIM 的网上申请',
+bring:'在留卡、银行账户或信用卡、护照',
+note:'签约前确认：在留卡剩余有效期太短时，有些运营商会限制分期买手机，先办纯 SIM 卡最稳。'});
+items.push({sec:1, id:'gomi', title:'搞清你家附近的垃圾分类规则', badge:['you','不然会被贴条'],
+desc:'每个市区町村的可燃、不可燃、资源垃圾的回收日和分类都不同，扔错了会被整袋退回，还贴上提示条。',
+where:'役所领取垃圾分类日历 / 说明小册子，或查市区町村官网和 App',
+bring:'登记住民时顺手在窗口领一份中文或简易版说明（没有就拍照日文版慢慢看）',
+note:'重点先记三件事：可燃垃圾日、大件垃圾（粗大ごみ）要预约买处理券、瓶罐的回收日。'});
+if(isEmployee || ctx.status==='parttime'){
+items.push({sec:2, id:'wh-payslip', title:'拿到工资先核对工资条', badge:['you','每份工作都看'],
+desc:'确认工资里扣了什么：扣了「健康保险・厚生年金」，说明公司帮你加入了社保；只扣「所得税（源泉徴収）」，则国保和年金多半要自己办。打工度假者的所得税处理可能因税务上的居住者身份和税收协定而不同，金额看着不对，先问公司，再问税务署。',
+where:'看工资明细即可，有疑问问公司人事或税务署',
+bring:'工资条、源泉徴収票（离职时务必向公司索取）',
+note:'每份工作的源泉徴収票都收好：换工作多、预扣税扣多扣少，最后都靠它在确定申告时对账。'});
+}
+if(ctx.hasSide){
+items.push({sec:2, id:'side-note', title:'工资以外的收入：先养成记账习惯', badge:['you','为报税做准备'],
+desc:'先把每笔工资以外的收入和相关支出简单记下来（日期、金额、平台），到报税时才不会抓瞎。',
+where:'手机备忘录或表格就行，先记流水',
+bring:'收入到账记录、相关支出票据',
+note:'是否需要申报看金额和收入类型，见下方「确定申告」一项；拿不准就问税务署。'});
+}
+if(ctx.license){
+items.push({sec:2, id:'license', title:'驾照转换（外免切替）', badge:['info','有驾照才需要'],
+desc:'持原居地驾照可以在日本申请「外免切替」换日本驾照，一般要通过适应性检查、知识确认和技能确认，热门考场预约非常抢手，要提前几个月约。',
+where:'你住址所属都道府县的驾驶执照考试中心（運転免許試験場）',
+bring:'原驾照原件及日文翻译件（可由 JAF 等机构翻译）、在留卡、护照、住民票、照片等，以考场官网清单为准',
+note:'关键条件：取得驾照后，需要能证明曾在发照地停留满 3 个月（看护照出入境记录等）。先查你所在考场的预约方式再准备材料。'});
+}
+if(!isEmployee){
+items.push({sec:2, id:'nenkin-check', title:'回头确认：年金和保险的缴费单来了吗', badge:['you','别漏缴'],
+desc:'国民健康保险和国民年金的缴费单一般会陆续寄到家里，确认金额和缴纳期限，设置银行自动扣款最省心。打工度假常搬家，搬家后更要留意缴费单有没有跟上新地址。',
+where:'缴费单邮寄到家；自动扣款去银行或役所办',
+bring:'寄到的缴费单、银行账户和印章',
+note:'开始工作并加入公司社保时，记得去役所办国保的退出手续，不然会重复缴费。'});
+}
+var whExpiryTxt = ctx.expiry? ('你填的到期日是 ' + fmt(ctx.expiry) + '。'): (ctx.estExpiry? ('按抵达日推算，到期日约为 ' + fmt(ctx.estExpiry) + '（抵达日＋1 年－1 天，依民法第 140 条、第 143 条期间计算；推算值，请与在留卡核对）。'): '把抵达日期和在留卡到期日填到上面，这里会帮你算剩余时间。');
+items.push({sec:3, id:'wh-expiry', title:'在留期限最长 1 年：打工度假不能更新延长', badge:['law','千万别过期'],
+desc: whExpiryTxt + '打工度假的在留期间由与对方国家/地区的安排决定，最长 1 年：台湾入境时一次给 1 年、期满不能延长；少数国家/地区先给 6 个月，只能在协定上限内更新，不能靠更新无限续下去（以在留卡上的到期日为准）。期满前请提前安排离境；想留下改其他在留资格的要注意：台湾等部分国家/地区的安排以期满回国为前提，能否在日本国内直接变更因人而异、并无保证，务必提前向入管确认，别把变更当成必然的退路。',
+where:'咨询变更可行性：地方出入国在留管理局；只是离境的话无需申请，但要办下面一条的离境前手续',
+bring:'如申请变更：在留资格变更许可申请书、在留卡、护照，以及目标资格要求的证明材料（以入管官网清单为准）',
+note:'至少提前 2–3 个月开始准备并先向入管咨询；到期日过了还没离境、资格也没变更成功，就会变成非法滞在。'});
+items.push({sec:3, id:'wh-leave', title:'离开日本前：办转出、退保和税金清算', badge:['you','离境前清单'],
+desc:'确定离境日期后，去役所提交转出届（迁往海外），同时办国民健康保险的退出和保险费清算；国民年金也办退出手续——缴纳月数等条件符合时，离境后可申请一笔「脱退一时金」，细节以日本年金机构说明为准。',
+where:'住址所属的市区町村役所；年金细节可问年金事务所',
+bring:'在留卡、My Number 相关文件、保险证、缴费单',
+note:'住民税如有未缴的也要结清。源泉徴収票先留好：离境前到税务署确认是否需要确定申告，或指定一位「纳税管理人」代你处理后续税务。'});
+items.push({sec:3, id:'kakutei', title:'确定申告：换过工作 / 有多份工资时，次年 2–3 月确认', badge:['info','了解一下'],
+desc:'确定申告的申报期一般是次年 2 月 16 日到 3 月 15 日。在同一家单位做到年底、由公司做完年末调整的人多数不用自己办；但年中离职、同时打两份工、或预扣的所得税扣多了想退税时，可能需要自己申报。',
+where:'税务署窗口、邮寄，或用 e-Tax 在线申报',
+bring:'每份工作的源泉徴収票、My Number 相关文件、各种控除证明',
+note:'打工度假的人很多在申报期之前就已离境，这种情况提前向税务署咨询离境时的处理办法，别等走了才发现要补办。'});
+items.push({sec:3, id:'address-change', title:'期间搬家：14 天内去新役所办转入届', badge:['law','全年都适用'],
+desc:'打工度假常换城市：每次搬家都要先在原住址役所办转出，再在搬入后 14 天内去新住址役所办转入届，在留卡背面的地址会一并更新。银行、手机、保险的地址也顺手改掉。',
+where:'原住址和新住址的市区町村役所',
+bring:'在留卡、转出证明（同市内搬家流程不同，以窗口说明为准）',
+note:'地址不更新，役所的缴费单和入管的通知都会寄不到，这是打工度假最常见的漏缴原因。'});
+return items;
+}
+
+/* ===== Working Holiday · Traditional (Taiwan) ===== */
+items.push({sec:0, id:'wh-airport', title:'入境當天・機場：領在留卡，不用辦資格外活動許可', badge:['info','入境第一步'],
+desc:'在機場過的其實是入管的「上陸審査」（入國審查），不是海關。審查通過後護照上貼「上陸許可」印：主要機場（成田、羽田、中部、關西、新千歲、廣島、福岡）當場發在留卡；其他機場先蓋「在留カード後日交付」，卡在辦完住民登記後郵寄到家。留學生常被問「要不要打工」，那是給「留學」等資格當場申請「資格外活動許可」的流程——打工度假不一樣：你的「特定活動」本身就包含為補貼旅費而打工的活動（風俗營業除外），不需要另辦資格外活動許可。審查時如實說明會打工補貼旅費即可，這本來就是這個簽證允許做的事。台灣的在留期間在入境時一次給 1 年，從入境當天起算（日本台灣交流協會 Q&A），到期日以在留卡為準。',
+where:'入境機場的入國審查櫃台',
+bring:'護照（貼有打工度假簽證）；其他資料依窗口要求出示',
+note:'當場檢查兩處：①在留卡正面「就勞制限の有無」應寫「指定書により指定された就勞活動のみ可」；②護照裡應訂著一張「指定書」——在留卡上只寫「特定活動」，具體能做什麼全看指定書：上面寫明度假活動＋補貼旅費的打工、風俗營業禁止，應徵時雇主也會要求出示它。指定書別撕、別弄丟，換新護照時連舊護照一起收好；萬一不見了，盡快聯絡地方出入國在留管理局諮詢。'});
+items.push({sec:0, id:'wh-basics', title:'先確認：你的在留資格是「特定活動（打工度假）」', badge:['info','打工度假專屬'],
+desc:'打工度假是日本與對方國家/地區之間的青年交流安排：以度假、體驗日本文化和生活為主，打工只是補貼旅費的附隨活動。在留資格屬於「特定活動」，能做的活動以護照上貼的「指定書」為準。申請時年齡為 18–30 歲。',
+where:'先看自己護照上的「指定書」和在留卡上的到期日',
+bring:'護照（含指定書）、在留卡',
+note:'參加次數依國家/地區不同：多數一生一次；台灣自 2026 年 2 月 1 日起放寬為一生 2 次（外務省說明），以日本台灣交流協會的最新說明為準。'});
+items.push({sec:0, id:'resident', title:'去區役所 / 市役所辦住民登記（転入届）', badge:['law','法律期限 · 14天內'],
+desc:'和其它簽證一樣：定好住址後 14 天內辦住民登記，這是所有手續的第一步，健康保險、年金、My Number、銀行開戶都排在它後面。',
+where:'你住址所屬的市区町村役所「住民課 / 戶籍住民課」窗口',
+bring:'在留卡、護照',
+note:'法律規定搬入後 14 天內必須申報。打工度假常換城市、換住處，每次搬家都要重新辦（見最後一條）。'});
+items.push({sec:0, id:'zairyu-address', title:'在留卡背面登記地址', badge:['law','和住民登記一起辦'],
+desc:'辦転入届時，工作人員會把你的新地址印在在留卡背面，這張卡才算「有地址的在留卡」，開戶、辦手機、應徵都要用它。',
+where:'同一個窗口，和住民登記同時完成',
+bring:'在留卡本人',
+note:'辦完當場檢查一下：背面地址有沒有打錯字。'});
+items.push({sec:0, id:'mynumber-apply', title:'申請 My Number 卡（個人番號卡）', badge:['you','強烈建議辦'],
+desc:'辦住民登記後會拿到個人番號通知。打工入職、開戶、辦手續都會用到 My Number，越早申請越省事，郵寄到手通常要幾週。',
+where:'役所窗口當場申請，或用通知書上的 QR Code 在線上申請',
+bring:'在留卡、個人番號通知書（登記後寄到或當場領取，以當地役所為準）',
+note:'申請時要設 2 組密碼，當場記好。照片可現場拍或自備證件照。'});
+if(!isEmployee){
+items.push({sec:0, id:'kokuho', title:'加入國民健康保險（沒有公司社保時）', badge:['law','14天內'],
+desc:'打工度假期間多數人沒有公司社保：只要你在日本有住址、又沒加入工作單位的健康保險，就必須自己在役所加入國民健康保險，住民登記後 14 天內辦。日本看病自付比例靠它降到 3 成，沒保險時全額自費非常貴。',
+where:'役所「保險年金課」窗口，通常和住民登記同一天順手辦完',
+bring:'在留卡、My Number 相關文件',
+note:'之後如果某份工作把你加入了公司社保（健康保險＋厚生年金），記得去役所辦國保的退出手續，避免重複繳費。'});
+items.push({sec:0, id:'nenkin', title:'辦國民年金手續（20 歲以上）', badge:['law','20歲以上必辦'],
+desc:'在日本居住的 20 歲到 59 歲的人原則上都要加入國民年金，打工度假也一樣（未滿 20 歲的人從 20 歲生日那個月起）。沒有公司厚生年金時，先在役所辦國民年金。',
+where:'役所「保險年金課」窗口',
+bring:'在留卡、護照、My Number 相關文件',
+note:'注意：打工度假不是留學，不能用「學生納付特例」。但收入低時可以申請一般的保險料「免除」或「納付猶予」，按前年所得等條件審查；剛來日本通常沒什麼收入，也別自己下結論，去窗口申請、由役所和年金機構判斷。千萬別不申報地放著欠繳。'});
+} else {
+items.push({sec:0, id:'shaho-note', title:'確認：你的健康保險和年金由公司辦', badge:['info','不用自己跑役所辦'],
+desc:'如果你的工作單位把你加入了健康保險和厚生年金，就不需要自己再辦國民健康保險和國民年金。打工度假能被公司加入社保的情況不多見，入職時務必確認清楚。',
+where:'入職時交給公司人事的資料裡確認',
+bring:'My Number、年金手帳或基礎年金番號通知（沒有的話跟人事說明是首次在日本工作）',
+note:'入職一兩週後還沒拿到健康保險證，要主動問人事；如果公司其實沒給你辦，立刻回役所自己辦國保和年金。'});
+}
+items.push({sec:1, id:'wh-work', title:'打工前確認：不用辦資格外活動許可，但有行業禁區', badge:['law','打工度假專屬'],
+desc:'打工度假的「特定活動」本身就包含為補貼旅費而工作的活動，所以打工不需要另外申請「資格外活動許可」，也沒有留學生那種每週 28 小時的上限（但勞動法關於工時、休息和加班費的規定照常適用，護照上的指定書也要看清）。',
+where:'應徵時把在留卡和護照指定書給雇主確認；拿不準的工種先向地方出入國在留管理局諮詢',
+bring:'在留卡、護照（含指定書）',
+note:'絕對禁區：在風俗營業相關場所工作——酒吧、夜總會、陪侍型餐飲店、柏青哥、麻將館、遊戲中心以及性風俗相關店鋪等《風俗營業法》管轄的營業場所，連洗碗、打掃等後台工作也算在內。外務省明確：在這類場所從業（人身交易受害等特殊情況除外）屬於退去強制（遣返）事由，雇主也會被追究不法就勞助長罪。找工作先確認店鋪類型。'});
+items.push({sec:1, id:'bank', title:'開一個日本銀行帳戶', badge:['you','薪水 / 房租都要用'],
+desc:'發薪水、繳房租水電、綁定手機支付都靠它。剛來可選對新人較友善的銀行，如ゆうちょ銀行（郵儲）或各大銀行的新人口座。',
+where:'銀行據點或部分銀行的 App / 線上申請',
+bring:'已登記地址的在留卡、印章（部分銀行可簽名代替）、My Number 相關文件、手機號碼',
+note:'來日不滿 6 個月時，帳戶可能先是「非居住者口座」，部分轉帳功能受限，滿 6 個月後去窗口變更即可。'});
+items.push({sec:1, id:'sim', title:'辦手機卡 / 手機號碼', badge:['you','越早越好'],
+desc:'日本辦很多事都要手機號碼收驗證碼。先辦一張能打電話的卡，流量方案之後再慢慢換。',
+where:'電信門市、電器量販店，或格安 SIM 的線上申請',
+bring:'在留卡、銀行帳戶或信用卡、護照',
+note:'簽約前確認：在留卡剩餘效期太短時，有些電信業者會限制分期買手機，先辦純 SIM 卡最穩。'});
+items.push({sec:1, id:'gomi', title:'搞清你家附近的垃圾分類規則', badge:['you','不然會被貼條'],
+desc:'每個市区町村的可燃、不可燃、資源垃圾的回收日和分類都不同，丟錯了會被整袋退回，還貼上提示條。',
+where:'役所領取垃圾分類行事曆 / 說明小冊子，或查市区町村官網和 App',
+bring:'登記住民時順手在窗口領一份中文或簡易版說明（沒有就拍照日文版慢慢看）',
+note:'重點先記三件事：可燃垃圾日、大型垃圾（粗大ごみ）要預約買處理券、瓶罐的回收日。'});
+if(isEmployee || ctx.status==='parttime'){
+items.push({sec:2, id:'wh-payslip', title:'拿到薪水先核對薪水單', badge:['you','每份工作都看'],
+desc:'確認薪水裡扣了什麼：扣了「健康保險・厚生年金」，說明公司幫你加入了社保；只扣「所得稅（源泉徴収）」，則國保和年金多半要自己辦。打工度假者的所得稅處理可能因稅務上的居住者身分和租稅協定而不同，金額看著不對，先問公司，再問稅務署。',
+where:'看薪水明細即可，有疑問問公司人事或稅務署',
+bring:'薪水單、源泉徴収票（離職時務必向公司索取）',
+note:'每份工作的源泉徴収票都收好：換工作多、預扣稅扣多扣少，最後都靠它在確定申告時對帳。'});
+}
+if(ctx.hasSide){
+items.push({sec:2, id:'side-note', title:'薪水以外的收入：先養成記帳習慣', badge:['you','為報稅做準備'],
+desc:'先把每筆薪水以外的收入和相關支出簡單記下來（日期、金額、平台），到報稅時才不會手忙腳亂。',
+where:'手機備忘錄或表格就行，先記流水',
+bring:'收入入帳紀錄、相關支出收據',
+note:'是否需要申報看金額和收入類型，見下方「確定申告」一項；拿不準就問稅務署。'});
+}
+if(ctx.license){
+items.push({sec:2, id:'license', title:'有台灣駕照：外免切替換日本駕照', badge:['info','有台灣駕照才需要'],
+desc:'持台灣駕照可以在日本申請「外免切替」換日本駕照，一般要通過適應性檢查、知識確認和技能確認，熱門考場預約非常搶手，要提前幾個月約。',
+where:'你住址所屬都道府縣的駕駛執照考試中心（運転免許試験場）',
+bring:'台灣駕照正本及日文翻譯件（可由 JAF 等機構翻譯）、在留卡、護照、住民票、照片等，以考場官網清單為準',
+note:'關鍵條件：取得台灣駕照後，需要能證明曾在台灣停留滿 3 個月（看護照出入境紀錄等）。先查你所在考場的預約方式再準備資料。'});
+}
+if(!isEmployee){
+items.push({sec:2, id:'nenkin-check', title:'回頭確認：年金和保險的繳費單來了嗎', badge:['you','別漏繳'],
+desc:'國民健康保險和國民年金的繳費單一般會陸續寄到家裡，確認金額和繳納期限，設定銀行自動扣款最省心。打工度假常搬家，搬家後更要留意繳費單有沒有跟上新地址。',
+where:'繳費單郵寄到家；自動扣款去銀行或役所辦',
+bring:'寄到的繳費單、銀行帳戶和印章',
+note:'開始工作並加入公司社保時，記得去役所辦國保的退出手續，不然會重複繳費。'});
+}
+var whExpiryTxt2 = ctx.expiry? ('你填的到期日是 ' + fmt(ctx.expiry) + '。'): (ctx.estExpiry? ('按抵達日推算，到期日約為 ' + fmt(ctx.estExpiry) + '（抵達日＋1 年－1 天，依民法第 140 條、第 143 條期間計算；推算值，請與在留卡核對）。'): '把抵達日期和在留卡到期日填到上面，這裡會幫你算剩餘時間。');
+items.push({sec:3, id:'wh-expiry', title:'在留期限最長 1 年：打工度假不能更新延長', badge:['law','千萬別過期'],
+desc: whExpiryTxt2 + '台灣的打工度假在入境時一次給 1 年（從入境日起算），期滿不能申請「期間更新」延長。請提前安排在到期前離境；想改其他在留資格的要注意：台日之間的安排以期滿回台為前提，能否在日本國內直接變更因人而異、並無保證，務必提前向入管確認，別把變更當成必然的退路。',
+where:'諮詢變更可行性：地方出入國在留管理局；只是離境的話無需申請，但要辦下面一條的離境前手續',
+bring:'如申請變更：在留資格變更許可申請書、在留卡、護照，以及目標資格要求的證明資料（以入管官網清單為準）',
+note:'至少提前 2–3 個月開始準備並先向入管諮詢；到期日過了還沒離境、資格也沒變更成功，就會變成非法滯在。'});
+items.push({sec:3, id:'wh-leave', title:'離開日本前：辦轉出、退保和稅金清算', badge:['you','離境前清單'],
+desc:'確定離境日期後，去役所提交轉出屆（遷往海外），同時辦國民健康保險的退出和保險費清算；國民年金也辦退出手續——繳納月數等條件符合時，離境後可申請一筆「脫退一時金」，細節以日本年金機構說明為準。',
+where:'住址所屬的市区町村役所；年金細節可問年金事務所',
+bring:'在留卡、My Number 相關文件、保險證、繳費單',
+note:'住民稅如有未繳的也要結清。源泉徴収票先留好：離境前到稅務署確認是否需要確定申告，或指定一位「納稅管理人」代你處理後續稅務。'});
+items.push({sec:3, id:'kakutei', title:'確定申告：換過工作 / 有多份薪水時，次年 2–3 月確認', badge:['info','了解一下'],
+desc:'確定申告的申報期一般是次年 2 月 16 日到 3 月 15 日。在同一家單位做到年底、由公司做完年末調整的人多數不用自己辦；但年中離職、同時打兩份工、或預扣的所得稅扣多了想退稅時，可能需要自己申報。',
+where:'稅務署窗口、郵寄，或用 e-Tax 線上申報',
+bring:'每份工作的源泉徴収票、My Number 相關文件、各種控除證明',
+note:'打工度假的人很多在申報期之前就已離境，這種情況提前向稅務署諮詢離境時的處理辦法，別等走了才發現要補辦。'});
+items.push({sec:3, id:'address-change', title:'期間搬家：14 天內去新役所辦転入届', badge:['law','全年都適用'],
+desc:'打工度假常換城市：每次搬家都要先在原住址役所辦轉出，再在搬入後 14 天內去新住址役所辦転入届，在留卡背面的地址會一併更新。銀行、手機、保險的地址也順手改掉。',
+where:'原住址和新住址的市区町村役所',
+bring:'在留卡、轉出證明（同市內搬家流程不同，以窗口說明為準）',
+note:'地址不更新，役所的繳費單和入管的通知都會寄不到，這是打工度假最常見的漏繳原因。'});
+return items;
+}
+
+function buildItems(ctx){
+var t = T();
+var tw = currentLang === 'tw';
+var isEmployee = ctx.status==='employee';
+var isStudent = ctx.status==='student' || ctx.visa==='study';
+var items = [];
+if(ctx.visa==='wh'){ return buildWHItems(ctx); }
+
+if(!tw){
+/* ===== Simplified ===== */
+items.push({sec:0, id:'resident', title:'去区役所 / 市役所办住民登记（転入届）', badge:['law','法律期限 · 14天内'],
+desc:'这是所有手续的第一步：登记了地址，健康保险、年金、My Number、银行开户才能往下走。',
+where:'你住址所属的市区町村役所「住民课 / 户籍住民课」窗口',
+bring:'在留卡、护照。如有家人同住，带上能证明亲属关系的文件（如户口本及翻译件，以窗口要求为准）',
+note:'法律规定搬入后 14 天内必须申报，拖太久可能被要求说明理由，别拖。'});
+items.push({sec:0, id:'zairyu-address', title:'在留卡背面登记地址', badge:['law','和住民登记一起办'],
+desc:'办転入届时，工作人员会把你的新地址打印在在留卡背面，这张卡才算「带地址的在留卡」，开户办手机都要用它。',
+where:'同一个窗口，和住民登记同时完成',
+bring:'在留卡本人',
+note:'办完当场检查一下：背面地址有没有打错字。'});
+items.push({sec:0, id:'mynumber-apply', title:'申请 My Number 卡（个人番号卡）', badge:['you','强烈建议办'],
+desc:'办住民登记后会拿到个人番号通知。My Number 卡以后办手续、开户、打工入职都会用到，越早申请越省事，邮寄到手通常要几周。',
+where:'役所窗口当场申请，或用通知书上的二维码在网上申请',
+bring:'在留卡、个人番号通知书（登记后寄到或当场领取，以当地役所为准）',
+note:'申请时要设 2 组密码，当场记好。照片可现场拍或自带证件照。'});
+if(!isEmployee){
+items.push({sec:0, id:'kokuho', title:'加入国民健康保险', badge:['law','14天内'],
+desc:'没有公司社保的人，必须自己在役所加入国民健康保险。日本看病自付比例靠它降到 3 成，没保险时全额自费非常贵。',
+where:'役所「保险年金课」窗口，通常和住民登记同一天顺手办完',
+bring:'在留卡、My Number 相关文件；学生可能有减免，记得主动问一句「学生有减额吗」',
+note:'保险费按收入算，第一年没收入通常较低；之后会寄缴费单，别漏缴。'});
+items.push({sec:0, id:'nenkin', title:'办国民年金手续（20 岁以上）', badge:['law','20岁以上必办'],
+desc:'在日本居住的 20 岁到 59 岁的人原则上都要加入年金。没工作或学生阶段先在役所办国民年金。',
+where:'役所「保险年金课」窗口',
+bring:'在留卡、护照、My Number 相关文件',
+note: isStudent? '学生重点看这里：可申请「学生納付特例」缓交（猶予）年金——这几年算进领年金要的 10 年资格期，但不算进年金额，10 年内可以追纳补上；按年度申请（4 月到次年 3 月），每年都要重新申请。语言学校能不能用，要看学校是不是认可的各种学校，去区役所或问学校确认。务必当场申请，别直接放着不管。': '暂时没收入时可以去窗口咨询年金缓缴等手续，不要无申报地欠缴。'});
+} else {
+items.push({sec:0, id:'shaho-note', title:'确认：你的健康保险和年金由公司办', badge:['info','不用自己跑役所办'],
+desc:'正社员 / 契约社员一般由公司统一加入健康保险和厚生年金，不需要自己再办国民健康保险和国民年金。',
+where:'入职时交给公司人事的材料里确认',
+bring:'My Number、年金手帐或基础年金番号通知（没有的话跟人事说明是首次在日本工作）',
+note:'入职一两周后还没拿到健康保险证，要主动问人事。'});
+}
+items.push({sec:1, id:'bank', title:'开一个日本银行账户', badge:['you','工资 / 房租都要用'],
+desc:'发工资、交房租水电、绑定手机支付都靠它。刚来可选对新人较友好的银行，如ゆうちょ银行（邮储）或各大银行的新人口座。',
+where:'银行网点或部分银行的 App / 网上申请',
+bring:'已登记地址的在留卡、印章（部分银行可签名代替）、My Number 相关文件、手机号',
+note:'来日不满 6 个月时，账户可能先是「非居住者口座」，部分转账功能受限，满 6 个月后去窗口变更即可。'});
+items.push({sec:1, id:'sim', title:'办手机卡 / 手机号', badge:['you','越早越好'],
+desc:'日本办很多事都要手机号收验证码。先办一张能打电话的卡，流量套餐之后再慢慢换。',
+where:'运营商门店、电器量贩店，或格安 SIM 的网上申请',
+bring:'在留卡、银行账户或信用卡、护照',
+note:'签约前确认：在留卡剩余有效期太短时，有些运营商会限制分期买手机，先办纯 SIM 卡最稳。'});
+items.push({sec:1, id:'hanko', title:'刻一枚印章（认印就够起步）', badge:['info','小知识'],
+desc:'日本很多文件不用签字、用盖章。日常先备一枚「认印」即可；签租房、买车等重要合同时才用去役所登记过的「实印」，开户专用的是「银行印」。',
+where:'印章店、百元店（日常认印）、网上刻章',
+bring:'想好刻法：一般刻姓氏，外国人也可用片假名或汉字',
+note:'别一上来就刻贵的实印套装，先一枚认印走天下，确定长期留下再升级。'});
+items.push({sec:1, id:'gomi', title:'搞清你家附近的垃圾分类规则', badge:['you','不然会被贴条'],
+desc:'每个市区町村的可燃、不可燃、资源垃圾的回收日和分类都不同，扔错了会被整袋退回，还贴上提示条。',
+where:'役所领取垃圾分类日历 / 说明小册子，或查市区町村官网和 App',
+bring:'登记住民时顺手在窗口领一份中文或简易版说明（没有就拍照日文版慢慢看）',
+note:'重点先记三件事：可燃垃圾日、大件垃圾（粗大ごみ）要预约买处理券、瓶罐的回收日。'});
+items.push({sec:1, id:'bike', title:'买自行车的话：做防犯登记', badge:['info','买了再办'],
+desc:'在日本买自行车时，店里一般会帮你办「防犯登记」，这是各都道府县要求的登记，车丢了或被警察临检时都靠它证明车是你的。',
+where:'购车的自行车店当场办理',
+bring:'在留卡等身份证明；登记费一般几百日元（各地区不同）',
+note:'买二手车时记得让原车主办「转让 / 注销」手续，不然临检时说不清。骑车别戴耳机、别玩手机，各地罚款趋严。'});
+if(isEmployee){
+items.push({sec:2, id:'shaho-check', title:'核对工资条：社保和厚生年金扣了吗', badge:['you','第一个月工资就看'],
+desc:'拿到第一份工资条，确认「健康保险」「厚生年金」「雇用保险」都有在扣，说明公司确实帮你办好了社保。',
+where:'看工资明细即可，有疑问问公司人事',
+bring:'工资条、健康保险证（应已由公司发放）',
+note:'保险证迟迟没发、工资条又没扣款，尽快找人事确认，这关系到看病和将来的年金。'});
+}
+if(isEmployee || ctx.status==='parttime'){
+items.push({sec:2, id:'gensen', title:'搞懂源泉徴収和年末调整', badge:['info','先知道有这回事'],
+desc:'你的工资里每月预扣的税叫「源泉徴収」；每年 11–12 月公司会做「年末调整」帮你多退少补，一般会让你交扶养、保险费等申告表，看不懂就拿中文说明对照着填。',
+where:'公司人事发放表格，通常在每年 11 月左右',
+bring:'扶养亲属信息、保险费缴纳证明（公司会通知需要什么）',
+note:'有副业收入、或一年换过工作时，年末调整可能处理不完，次年可能需要自己做确定申告。'});
+}
+if(ctx.hasSide){
+items.push({sec:2, id:'side-note', title:'副业 / 打工收入：先养成记账习惯', badge:['you','为报税做准备'],
+desc:'先把每笔副业、打工以外的收入和相关支出简单记下来（日期、金额、平台），到次年报税季才不会抓瞎。',
+where:'手机备忘录或表格就行，先记流水',
+bring:'收入到账记录、相关支出票据',
+note:'是否需要申报看金额和收入类型，规则见下方「确定申告」一项；拿不准就问税务署，别听信网传的一刀切说法。'});
+}
+if(ctx.license){
+items.push({sec:2, id:'license', title:'驾照转换（外免切替）', badge:['info','有中国驾照才需要'],
+desc:'持中国驾照可以在日本申请「外免切替」换日本驾照，一般要通过适应性检查、知识确认和技能确认，热门考场预约非常抢手，要提前几个月约。',
+where:'你住址所属都道府县的驾驶执照考试中心（運転免許試験場）',
+bring:'中国驾照原件及日文翻译件（可由 JAF 等机构翻译）、在留卡、护照、住民票、照片等，以考场官网清单为准',
+note:'关键条件：取得中国驾照后，需要能证明曾在中国停留满 3 个月（看护照出入境记录等）。先查你所在考场的预约方式再准备材料。'});
+}
+if(!isEmployee && !isStudent){
+items.push({sec:2, id:'nenkin-check', title:'回头确认：年金和保险的缴费单来了吗', badge:['you','别漏缴'],
+desc:'国民健康保险和国民年金的缴费单一般会陆续寄到家里，确认金额和缴纳期限，设置银行自动扣款最省心。',
+where:'缴费单邮寄到家；自动扣款去银行或役所办',
+bring:'寄到的缴费单、银行账户和印章',
+note:'收入变化（如开始工作加入公司社保）时，记得去役所办国保的退出手续，不然会重复缴费。'});
+}
+if(isStudent){
+items.push({sec:2, id:'student-work', title:'留学生打工前：确认资格外活动许可', badge:['law','打工的同学必看'],
+desc:'留学生打工必须先拿到「资格外活动许可」。以「留学」新入境、在留期间超过 3 个月的人，可以在入境机场拿到上陸許可后当场申请、当场拿到「包括許可」——这就是机场常问「要不要打工」的原因；漏办了之后要去地方入管补办。包括許可的范围：原则上每周不超过 28 小时，学校长假期间每天不超过 8 小时，且不能在风俗营业相关场所打工。',
+where:'入境机场（上陸許可后当场），或住址所属的地方出入国在留管理局',
+bring:'资格外活动许可申请书、护照、在留卡',
+note:'办好后确认：护照上贴有许可証印シール，在留卡背面「資格外活動許可欄」写着「許可：原則週28時間以内・風俗営業等の従事を除く」。超时打工会影响在留更新，务必让打工单位按规矩排班。'});
+}
+var expiryTxt = ctx.expiry? ('你填的到期日是 ' + fmt(ctx.expiry) + '。'): '把在留卡到期日填到上面，这里会帮你算时间。';
+var renewFrom = ctx.expiry? addDays(ctx.expiry, -90): null;
+items.push({sec:3, id:'renew', title:'在留期限管理：到期前 3 个月就能申请更新', badge:['law','千万别过期'],
+desc: expiryTxt + (renewFrom? ('最早可从 ' + fmt(renewFrom) + ' 起提交更新申请，建议提前 1–2 个月备齐材料。'): '更新申请可在到期前 3 个月起提交（在留期间 1 年以上的情况）。'),
+where:'地方出入国在留管理局，或部分情况可在线申请',
+bring:'在留期间更新许可申请书、在留卡、护照、收入 / 在学等证明（按在留资格不同，以入管官网清单为准）',
+note:'到期日当天还没提交申请就会变成非法滞在，后果很严重。把到期日写进手机日历，再设一个提前 3 个月的提醒。'});
+items.push({sec:3, id:'kakutei', title:'确定申告：有副业 / 多份收入的人次年 2–3 月报税', badge: ctx.hasSide? ['you','和你有关']: ['info','了解一下'],
+desc:'确定申告是自己向税务署申报一年总收入的手续，申报期一般是次年 2 月 16 日到 3 月 15 日。只有一份工资、且公司做完年末调整的人多数不用办；有副业收入、多处领工资、或想申请医疗费控除等情况时可能需要。',
+where:'税务署窗口、邮寄，或用 e-Tax 在线申报',
+bring:'源泉徴収票、副业收入和支出的记录、My Number 相关文件、各种控除证明',
+note:'「副业所得超过 20 万日元要申报」是常被提到的住民税 / 所得税大致分界，但细节因情况而异，别只凭这一句下结论，拿不准就咨询税务署的免费咨询。'});
+items.push({sec:3, id:'juminzei', title:'心理准备：住民税从第二年开始来', badge:['info','很多人被吓一跳'],
+desc:'住民税按上一年的收入计算，所以第一年通常没有，第二年 6 月左右开始收到缴费单或从工资里扣，金额可能不小。提前知道，就不会以为寄错了。',
+where:'缴费单由市区町村寄到家里，或由公司从工资代扣（特别征收）',
+bring:'收到缴费单后按期限缴纳；金额有疑问可去役所税务课问',
+note:'这也是为什么建议从第一个月就留一笔「税金预备金」，别把工资花光。'});
+items.push({sec:3, id:'address-change', title:'以后搬家 / 换工作，记得 14 天内申报', badge:['law','全年都适用'],
+desc:'第一年之后也一样：搬家要在转入后 14 天内去新地址的役所办転入届；换工作、离职等在留资格相关变化，一般要在 14 天内向入管申报（所属机构申报）。',
+where:'新住址的市区町村役所 / 出入国在留管理厅（部分可在线）',
+bring:'在留卡、转出证明（同市内搬家流程不同，以窗口说明为准）',
+note:'先把这一条记住，能避开第一年最常见的罚款和更新麻烦。'});
+return items;
+}
+
+/* ===== Traditional (Taiwan) ===== */
+items.push({sec:0, id:'resident', title:'去區役所 / 市役所辦住民登記（転入届）', badge:['law','法律期限 · 14天內'],
+desc:'這是所有手續的第一步：登記了地址，健康保險、年金、My Number、銀行開戶才能往下走。',
+where:'你住址所屬的市区町村役所「住民課 / 戶籍住民課」窗口',
+bring:'在留卡、護照。如有家人同住，帶上能證明親屬關係的文件（如戶口名簿及翻譯件，以窗口要求為準）',
+note:'法律規定搬入後 14 天內必須申報，拖太久可能被要求說明理由，別拖。'});
+items.push({sec:0, id:'zairyu-address', title:'在留卡背面登記地址', badge:['law','和住民登記一起辦'],
+desc:'辦転入届時，工作人員會把你的新地址印在在留卡背面，這張卡才算「有地址的在留卡」，開戶辦手機都要用它。',
+where:'同一個窗口，和住民登記同時完成',
+bring:'在留卡本人',
+note:'辦完當場檢查一下：背面地址有沒有打錯字。'});
+items.push({sec:0, id:'mynumber-apply', title:'申請 My Number 卡（個人番號卡）', badge:['you','強烈建議辦'],
+desc:'辦住民登記後會拿到個人番號通知。My Number 卡以後辦手續、開戶、打工入職都會用到，越早申請越省事，郵寄到手通常要幾週。',
+where:'役所窗口當場申請，或用通知書上的 QR Code 在線上申請',
+bring:'在留卡、個人番號通知書（登記後寄到或當場領取，以當地役所為準）',
+note:'申請時要設 2 組密碼，當場記好。照片可現場拍或自備證件照。'});
+if(!isEmployee){
+items.push({sec:0, id:'kokuho', title:'加入國民健康保險', badge:['law','14天內'],
+desc:'沒有公司社保的人，必須自己在役所加入國民健康保險。日本看病自付比例靠它降到 3 成，沒保險時全額自費非常貴。',
+where:'役所「保險年金課」窗口，通常和住民登記同一天順手辦完',
+bring:'在留卡、My Number 相關文件；學生可能有減免，記得主動問一句「學生有減額嗎」',
+note:'保險費按收入算，第一年沒收入通常較低；之後會寄繳費單，別漏繳。'});
+items.push({sec:0, id:'nenkin', title:'辦國民年金手續（20 歲以上）', badge:['law','20歲以上必辦'],
+desc:'在日本居住的 20 歲到 59 歲的人原則上都要加入年金。沒工作或學生階段先在役所辦國民年金。',
+where:'役所「保險年金課」窗口',
+bring:'在留卡、護照、My Number 相關文件',
+note: isStudent? '學生重點看這裡：可申請「學生納付特例」緩交（猶予）年金——這幾年算進領年金要的 10 年資格期，但不算進年金額，10 年內可以追納補上；按年度申請（4 月到次年 3 月），每年都要重新申請。語言學校能不能用，要看學校是不是認可的各種學校，去區役所或問學校確認。務必當場申請，別直接放著不管。': '暫時沒收入時可以去窗口諮詢年金緩繳等手續，不要無申報地欠繳。'});
+} else {
+items.push({sec:0, id:'shaho-note', title:'確認：你的健康保險和年金由公司辦', badge:['info','不用自己跑役所辦'],
+desc:'正社員 / 契約社員一般由公司統一加入健康保險和厚生年金，不需要自己再辦國民健康保險和國民年金。',
+where:'入職時交給公司人事的資料裡確認',
+bring:'My Number、年金手帳或基礎年金番號通知（沒有的話跟人事說明是首次在日本工作）',
+note:'入職一兩週後還沒拿到健康保險證，要主動問人事。'});
+}
+items.push({sec:1, id:'bank', title:'開一個日本銀行帳戶', badge:['you','薪水 / 房租都要用'],
+desc:'發薪水、繳房租水電、綁定手機支付都靠它。剛來可選對新人較友善的銀行，如ゆうちょ銀行（郵儲）或各大銀行的新人口座。',
+where:'銀行據點或部分銀行的 App / 線上申請',
+bring:'已登記地址的在留卡、印章（部分銀行可簽名代替）、My Number 相關文件、手機號碼',
+note:'來日不滿 6 個月時，帳戶可能先是「非居住者口座」，部分轉帳功能受限，滿 6 個月後去窗口變更即可。'});
+items.push({sec:1, id:'sim', title:'辦手機卡 / 手機號碼', badge:['you','越早越好'],
+desc:'日本辦很多事都要手機號碼收驗證碼。先辦一張能打電話的卡，流量方案之後再慢慢換。',
+where:'電信門市、電器量販店，或格安 SIM 的線上申請',
+bring:'在留卡、銀行帳戶或信用卡、護照',
+note:'簽約前確認：在留卡剩餘效期太短時，有些電信業者會限制分期買手機，先辦純 SIM 卡最穩。'});
+items.push({sec:1, id:'hanko', title:'刻一枚印章（認印就夠起步）', badge:['info','小知識'],
+desc:'日本很多文件不用簽字、用蓋章。日常先備一枚「認印」即可；簽租房、買車等重要合約時才用去役所登記過的「實印」，開戶專用的是「銀行印」。',
+where:'印章店、百元店（日常認印）、線上刻章',
+bring:'想好刻法：一般刻姓氏，外國人也可用片假名或漢字',
+note:'別一開始就刻貴的實印套裝，先一枚認印走天下，確定長期留下再升級。'});
+items.push({sec:1, id:'gomi', title:'搞清你家附近的垃圾分類規則', badge:['you','不然會被貼條'],
+desc:'每個市区町村的可燃、不可燃、資源垃圾的回收日和分類都不同，丟錯了會被整袋退回，還貼上提示條。',
+where:'役所領取垃圾分類行事曆 / 說明小冊子，或查市区町村官網和 App',
+bring:'登記住民時順手在窗口領一份中文或簡易版說明（沒有就拍照日文版慢慢看）',
+note:'重點先記三件事：可燃垃圾日、大型垃圾（粗大ごみ）要預約買處理券、瓶罐的回收日。'});
+items.push({sec:1, id:'bike', title:'買腳踏車的話：做防犯登記', badge:['info','買了再辦'],
+desc:'在日本買腳踏車時，店裡一般會幫你辦「防犯登記」，這是各都道府縣要求的登記，車丟了或被警察臨檢時都靠它證明車是你的。',
+where:'購車的腳踏車店當場辦理',
+bring:'在留卡等身分證明；登記費一般幾百日圓（各地區不同）',
+note:'買二手車時記得讓原車主辦「轉讓 / 注銷」手續，不然臨檢時說不清。騎車別戴耳機、別玩手機，各地罰款趨嚴。'});
+if(isEmployee){
+items.push({sec:2, id:'shaho-check', title:'核對薪水單：社保和厚生年金扣了嗎', badge:['you','第一個月薪水就看'],
+desc:'拿到第一份薪水單，確認「健康保險」「厚生年金」「雇用保險」都有在扣，說明公司確實幫你辦好了社保。',
+where:'看薪水明細即可，有疑問問公司人事',
+bring:'薪水單、健康保險證（應已由公司發放）',
+note:'保險證遲遲沒發、薪水單又沒扣款，盡快找人事確認，這關係到看病和將來的年金。'});
+}
+if(isEmployee || ctx.status==='parttime'){
+items.push({sec:2, id:'gensen', title:'搞懂源泉徴収和年末調整', badge:['info','先知道有這回事'],
+desc:'你的薪水裡每月預扣的稅叫「源泉徴収」；每年 11–12 月公司會做「年末調整」幫你多退少補，一般會讓你交扶養、保險費等申告表，看不懂就拿中文說明對照著填。',
+where:'公司人事發放表格，通常在每年 11 月左右',
+bring:'扶養親屬資訊、保險費繳納證明（公司會通知需要什麼）',
+note:'有副業收入、或一年換過工作時，年末調整可能處理不完，次年可能需要自己做確定申告。'});
+}
+if(ctx.hasSide){
+items.push({sec:2, id:'side-note', title:'副業 / 打工收入：先養成記帳習慣', badge:['you','為報稅做準備'],
+desc:'先把每筆副業、打工以外的收入和相關支出簡單記下來（日期、金額、平台），到次年報稅季才不會手忙腳亂。',
+where:'手機備忘錄或表格就行，先記流水',
+bring:'收入入帳紀錄、相關支出收據',
+note:'是否需要申報看金額和收入類型，規則見下方「確定申告」一項；拿不準就問稅務署，別聽信網傳的一刀切說法。'});
+}
+if(ctx.license){
+items.push({sec:2, id:'license', title:'有台灣駕照：外免切替換日本駕照', badge:['info','有台灣駕照才需要'],
+desc:'持台灣駕照可以在日本申請「外免切替」換日本駕照，一般要通過適應性檢查、知識確認和技能確認，熱門考場預約非常搶手，要提前幾個月約。',
+where:'你住址所屬都道府縣的駕駛執照考試中心（運転免許試験場）',
+bring:'台灣駕照正本及日文翻譯件（可由 JAF 等機構翻譯）、在留卡、護照、住民票、照片等，以考場官網清單為準',
+note:'關鍵條件：取得台灣駕照後，需要能證明曾在台灣停留滿 3 個月（看護照出入境紀錄等）。先查你所在考場的預約方式再準備資料。'});
+}
+if(!isEmployee && !isStudent){
+items.push({sec:2, id:'nenkin-check', title:'回頭確認：年金和保險的繳費單來了嗎', badge:['you','別漏繳'],
+desc:'國民健康保險和國民年金的繳費單一般會陸續寄到家裡，確認金額和繳納期限，設定銀行自動扣款最省心。',
+where:'繳費單郵寄到家；自動扣款去銀行或役所辦',
+bring:'寄到的繳費單、銀行帳戶和印章',
+note:'收入變化（如開始工作加入公司社保）時，記得去役所辦國保的退出手續，不然會重複繳費。'});
+}
+if(isStudent){
+items.push({sec:2, id:'student-work', title:'留學生打工前：確認資格外活動許可', badge:['law','打工的同學必看'],
+desc:'留學生打工必須先拿到「資格外活動許可」。以「留學」新入境、在留期間超過 3 個月的人，可以在入境機場拿到上陸許可後當場申請、當場拿到「包括許可」——這就是機場常問「要不要打工」的原因；漏辦了之後要去地方入管補辦。包括許可的範圍：原則上每週不超過 28 小時，學校長假期間每天不超過 8 小時，且不能在風俗營業相關場所打工。',
+where:'入境機場（上陸許可後當場），或住址所屬的地方出入國在留管理局',
+bring:'資格外活動許可申請書、護照、在留卡',
+note:'辦好後確認：護照上貼有許可証印シール，在留卡背面「資格外活動許可欄」寫著「許可：原則週28時間以内・風俗営業等の従事を除く」。超時打工會影響在留更新，務必讓打工單位按規矩排班。'});
+}
+var expiryTxt2 = ctx.expiry? ('你填的到期日是 ' + fmt(ctx.expiry) + '。'): '把在留卡到期日填到上面，這裡會幫你算時間。';
+var renewFrom2 = ctx.expiry? addDays(ctx.expiry, -90): null;
+items.push({sec:3, id:'renew', title:'在留期限管理：到期前 3 個月就能申請更新', badge:['law','千萬別過期'],
+desc: expiryTxt2 + (renewFrom2? ('最早可從 ' + fmt(renewFrom2) + ' 起提交更新申請，建議提前 1–2 個月備齊資料。'): '更新申請可在到期前 3 個月起提交（在留期間 1 年以上的情況）。'),
+where:'地方出入國在留管理局，或部分情況可線上申請',
+bring:'在留期間更新許可申請書、在留卡、護照、收入 / 在學等證明（按在留資格不同，以入管官網清單為準）',
+note:'到期日當天還沒提交申請就會變成非法滯在，後果很嚴重。把到期日寫進手機行事曆，再設一個提前 3 個月的提醒。'});
+items.push({sec:3, id:'kakutei', title:'確定申告：有副業 / 多份收入的人次年 2–3 月報稅', badge: ctx.hasSide? ['you','和你有關']: ['info','了解一下'],
+desc:'確定申告是自己向稅務署申報一年總收入的手續，申報期一般是次年 2 月 16 日到 3 月 15 日。只有一份薪水、且公司做完年末調整的人多數不用辦；有副業收入、多處領薪水、或想申請醫療費控除等情況時可能需要。',
+where:'稅務署窗口、郵寄，或用 e-Tax 線上申報',
+bring:'源泉徴収票、副業收入和支出的紀錄、My Number 相關文件、各種控除證明',
+note:'「副業所得超過 20 萬日圓要申報」是常被提到的住民稅 / 所得稅大致分界，但細節因狀況而異，別只憑這一句下結論，拿不準就諮詢稅務署的免費諮詢。'});
+items.push({sec:3, id:'juminzei', title:'心理準備：住民稅從第二年開始來', badge:['info','很多人被嚇一跳'],
+desc:'住民稅按上一年的收入計算，所以第一年通常沒有，第二年 6 月左右開始收到繳費單或從薪水裡扣，金額可能不小。提前知道，就不會以為寄錯了。',
+where:'繳費單由市区町村寄到家裡，或由公司從薪水代扣（特別徵收）',
+bring:'收到繳費單後按期限繳納；金額有疑問可去役所稅務課問',
+note:'這也是為什麼建議從第一個月就留一筆「稅金預備金」，別把薪水花光。'});
+items.push({sec:3, id:'address-change', title:'之後搬家 / 換工作，記得 14 天內申報', badge:['law','全年都適用'],
+desc:'第一年之後也一樣：搬家要在轉入後 14 天內去新地址的役所辦転入届；換工作、離職等在留資格相關變化，一般要在 14 天內向入管申報（所屬機構申報）。',
+where:'新住址的市区町村役所 / 出入國在留管理廳（部分可線上）',
+bring:'在留卡、轉出證明（同市內搬家流程不同，以窗口說明為準）',
+note:'先把這一條記住，能避開第一年最常見的罰款和更新麻煩。'});
+return items;
+}
+
+function applyStatic(){
+var t = T();
+document.documentElement.lang = currentLang==='tw' ? 'zh-Hant' : 'zh-CN';
+document.title = t.docTitle;
+document.body.classList.toggle('lang-tw', currentLang==='tw');
+$('heroTag').textContent = t.heroTag;
+$('heroTitle').innerHTML = t.heroTitle;
+$('heroDesc').textContent = t.heroDesc;
+$('heroPoint1').textContent = t.heroPoints[0];
+$('heroPoint2').textContent = t.heroPoints[1];
+$('heroPoint3').textContent = t.heroPoints[2];
+$('formCard').setAttribute('aria-label', t.formAria);
+$('formTitle').textContent = t.formTitle;
+$('formSub').textContent = t.formSub;
+$('arrivalLabel').textContent = t.arrivalLabel;
+$('expiryLabel').textContent = t.expiryLabel;
+$('expiryOpt').textContent = t.expiryOpt;
+$('visaLabel').textContent = t.visaLabel;
+for(var i=0;i<visaEl.options.length && i<t.visaOpts.length;i++){ visaEl.options[i].textContent = t.visaOpts[i]; }
+$('statusLabel').textContent = t.statusLabel;
+for(var j=0;j<statusEl.options.length && j<t.statusOpts.length;j++){ statusEl.options[j].textContent = t.statusOpts[j]; }
+$('licenseText').textContent = t.licenseText;
+$('licenseSub').textContent = t.licenseSub;
+$('sideText').textContent = t.sideText;
+$('sideSub').textContent = t.sideSub;
+$('whShahoText').textContent = t.whShahoText;
+$('whShahoSub').textContent = t.whShahoSub;
+$('privacyText').textContent = t.privacy;
+$('progressTitle').textContent = t.progressTitle;
+$('copyBtn').textContent = t.copyBtn;
+$('resetBtn').textContent = t.resetBtn;
+$('toast').textContent = t.toast;
+$('footerTitle').textContent = t.footerTitle;
+$('footerP1').textContent = t.footerP1;
+$('footerP2').textContent = t.footerP2;
+$('langCN').classList.toggle('active', currentLang==='cn');
+$('langTW').classList.toggle('active', currentLang==='tw');
+$('langCN').setAttribute('aria-pressed', currentLang==='cn' ? 'true' : 'false');
+$('langTW').setAttribute('aria-pressed', currentLang==='tw' ? 'true' : 'false');
+}
+
+function render(){
+var t = T();
+var SECTIONS = t.sections;
+var ctx = {
+arrival: parseDate(arrivalEl.value),
+expiry: parseDate(expiryEl.value),
+visa: visaEl.value, status: statusEl.value,
+license: licenseEl.checked, hasSide: sideEl.checked,
+whHasShaho: whShahoEl.checked
+};
+ctx.estExpiry = null; ctx.effExpiry = ctx.expiry;
+if(ctx.visa==='wh'){
+ctx.estExpiry = (!ctx.expiry && ctx.arrival)? addOneYear(ctx.arrival): null;
+ctx.effExpiry = ctx.expiry || ctx.estExpiry;
+}
+$('whShahoLine').style.display = (ctx.visa==='wh')? '' : 'none';
+var items = buildItems(ctx);
+var timeline = $('timeline');
+timeline.innerHTML = '';
+
+SECTIONS.forEach(function(sec, si){
+var secItems = items.filter(function(it){ return it.sec===si;});
+if(!secItems.length) return;
+var wrap = document.createElement('section');
+wrap.className='section';
+var deadline = (sec.days && ctx.arrival)? addDays(ctx.arrival, sec.days): null;
+var doneCount = secItems.filter(function(it){ return checked[it.id];}).length;
+
+var head = document.createElement('div');
+head.className='section-head';
+head.innerHTML = '<div class="dot">'+sec.num+'</div><div><h3>'+sec.name+'</h3><div class="when">'+sec.sub+
+(deadline? ' · '+t.deadlineLabel+'：<b>'+fmt(deadline)+'</b>': '')+'</div></div><div class="section-count">'+doneCount+' / '+secItems.length+' '+t.countSuffix+'</div>';
+wrap.appendChild(head);
+if(si===0 && deadline && ((deadline.getMonth()===11 && deadline.getDate()>=21) || (deadline.getMonth()===0 && deadline.getDate()<=3))){
+var yen = document.createElement('div');
+yen.className='year-end-note';
+yen.textContent = t.yearEndNote;
+wrap.appendChild(yen);
+}
+
+var list = document.createElement('div');
+list.className='items';
+secItems.forEach(function(it){
+var card = document.createElement('div');
+card.className='item'+(checked[it.id]?' done':'');
+var badgeHtml = it.badge? '<span class="badge badge-'+it.badge[0]+'">'+it.badge[1]+'</span>': '';
+card.innerHTML =
+'<label class="item-top"><input type="checkbox" data-id="'+it.id+'" '+(checked[it.id]?'checked':'')+'><span class="item-title">'+it.title+badgeHtml+'</span></label>'+
+'<p class="item-desc">'+it.desc+'</p>'+
+'<div class="item-meta">'+
+(it.where? '<div><b>'+t.metaWhere+'</b><span>'+it.where+'</span></div>': '')+
+(it.bring? '<div><b>'+t.metaBring+'</b><span>'+it.bring+'</span></div>': '')+
+'</div>'+
+(it.note? '<div class="item-note">💡 '+it.note+'</div>': '');
+list.appendChild(card);
+});
+wrap.appendChild(list);
+timeline.appendChild(wrap);
+});
+
+var boxes = timeline.querySelectorAll('input[type="checkbox"][data-id]');
+boxes.forEach(function(b){
+b.addEventListener('change', function(){
+checked[b.getAttribute('data-id')] = b.checked;
+render();
+});
+});
+
+var total = items.length;
+var done = items.filter(function(it){ return checked[it.id];}).length;
+$('progressNum').textContent = done + ' / ' + total;
+$('progressFill').style.width = (total? Math.round(done/total*100): 0) + '%';
+var msg = $('progressMsg');
+if(done===0) msg.textContent = t.msgStart;
+else if(done<total) msg.textContent = t.msgPartial(done, total-done);
+else msg.textContent = t.msgAll;
+
+var alert = $('expiryAlert');
+var alertExpiry = (ctx.visa==='wh')? ctx.effExpiry : ctx.expiry;
+if(alertExpiry){
+var today = new Date(); today.setHours(0,0,0,0);
+var left = daysBetween(today, alertExpiry);
+var renewFrom = addDays(alertExpiry, -90);
+if(ctx.visa==='wh' && ctx.estExpiry){
+if(left < 0){
+alert.innerHTML = t.whEstExpired(fmt(ctx.estExpiry), Math.abs(left));
+alert.className='expiry-alert show';
+} else if(left <= 90){
+alert.innerHTML = t.whEstSoon(fmt(ctx.estExpiry), left);
+alert.className='expiry-alert show';
+} else {
+alert.innerHTML = t.whEstFuture(fmt(ctx.estExpiry), left);
+alert.className='expiry-alert show';
+}
+} else if(ctx.visa==='wh'){
+if(left < 0){
+alert.innerHTML = t.whExpiryExpired(Math.abs(left));
+alert.className='expiry-alert show';
+} else if(left <= 90){
+alert.innerHTML = t.whExpirySoon(left);
+alert.className='expiry-alert show';
+} else {
+alert.innerHTML = t.whExpiryFuture(fmt(alertExpiry), left);
+alert.className='expiry-alert show';
+}
+} else if(left < 0){
+alert.innerHTML = t.expiryExpired(Math.abs(left));
+alert.className='expiry-alert show';
+} else if(left <= 90){
+alert.innerHTML = t.expirySoon(left, fmt(renewFrom));
+alert.className='expiry-alert show';
+} else {
+alert.innerHTML = t.expiryFuture(fmt(alertExpiry), left, fmt(renewFrom));
+alert.className='expiry-alert show';
+}
+} else {
+alert.className='expiry-alert'; alert.innerHTML='';
+}
+
+window.__lastItems = items;
+window.__lastCtx = ctx;
+window.__lastSections = SECTIONS;
+}
+
+function setLang(lang){
+if(currentLang===lang) return;
+currentLang = lang;
+applyStatic();
+render();
+}
+
+$('langCN').addEventListener('click', function(){ setLang('cn'); });
+$('langTW').addEventListener('click', function(){ setLang('tw'); });
+
+['change','input'].forEach(function(ev){
+[arrivalEl,expiryEl,visaEl,statusEl,licenseEl,sideEl,whShahoEl].forEach(function(el){
+el.addEventListener(ev, render);
+});
+});
+
+$('resetBtn').addEventListener('click', function(){
+checked = {};
+render();
+window.scrollTo({top:0, behavior:'smooth'});
+});
+
+$('copyBtn').addEventListener('click', function(){
+var t = T();
+var items = window.__lastItems || [];
+var ctx = window.__lastCtx || {};
+var SECTIONS = window.__lastSections || t.sections;
+var lines = [''];
+if(ctx.arrival) lines.push(t.copyArrival+fmt(ctx.arrival));
+if(ctx.expiry) lines.push(t.copyExpiry+fmt(ctx.expiry));
+else if(ctx.estExpiry) lines.push(t.copyEstExpiry+fmt(ctx.estExpiry));
+lines.push('');
+SECTIONS.forEach(function(sec, si){
+var secItems = items.filter(function(it){ return it.sec===si;});
+if(!secItems.length) return;
+lines.push('■ '+sec.name);
+secItems.forEach(function(it){
+lines.push((checked[it.id]?'☑ ':'□ ')+it.title);
+});
+lines.push('');
+});
+lines.push(t.copyNote);
+var text = lines.join('\n');
+function done(){ var el=$('toast'); el.classList.add('show'); setTimeout(function(){ el.classList.remove('show');}, 2600);}
+if(navigator.clipboard && navigator.clipboard.writeText){
+navigator.clipboard.writeText(text).then(done).catch(function(){ fallback();});
+} else { fallback();}
+function fallback(){
+var ta=document.createElement('textarea'); ta.value=text; document.body.appendChild(ta);
+ta.select(); try{ document.execCommand('copy');}catch(e){} document.body.removeChild(ta); done();
+}
+});
+
+applyStatic();
+render();
+})();
+</script>
+</body>
+</html>
